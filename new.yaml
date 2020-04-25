@@ -33,4 +33,16 @@ spec:
       volumes:
       - name: html
         emptyDir: {}
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: blog
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: blog
